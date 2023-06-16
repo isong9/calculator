@@ -15,12 +15,9 @@ class Control:
             return "Calculation Error"
         
     def connectSignals(self):
-        self.view.btn1.clicked.connect(self.calculate)
+        self.view.btn1.clicked.connect(lambda: self.view.setDisplay(self.calculate()))
         self.view.btn2.clicked.connect(self.view.clearMessage)
         
     def sum(self, a, b):
-        try:
             return a+b
-        except:
-            return "Calculation Error"
         
